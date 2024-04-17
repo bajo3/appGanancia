@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Ganancia</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Ganancia</h1>
+        
+        <form method="POST">
+            <h2>Calcular Ganancia Diaria</h2>
+            <label for="tasa_anual">Tasa de interés anual (%):</label>
+            <input type="number" id="tasa_anual" name="tasa_anual" step="0.01" required><br><br>
+            <label for="monto_inicial">Monto inicial ($):</label>
+            <input type="number" id="monto_inicial" name="monto_inicial" step="0.01" required><br><br>
+            <input type="submit" name="calcular_diaria" value="Calcular Ganancia Diaria">
+        </form>
+        
+        {% if ganancia_diaria %}
+            <p>Ganancia diaria: ${{ ganancia_diaria }}</p>
+        {% endif %}
+    </div>
+    <div class="container">
+        <form method="POST">
+            <h2>Calcular Ganancia Total</h2>
+            <label for="ganancia_diaria">Ganancia diaria:</label>
+            <input type="number" id="ganancia_diaria" name="ganancia_diaria" step="0.01" required><br><br>
+            <label for="dias_total">Cantidad de días:</label>
+            <input type="number" id="dias_total" name="dias_total" required><br><br>
+            <input type="submit" name="calcular_total" value="Calcular Ganancia Total">
+        </form>
+        {% if ganancia_total %}
+        <p>Ganancia total en {{ dias_total }} días: ${{ ganancia_total }}</p>
+    {% endif %}
+    </div>
+
+
+    
+  
+</body>
+</html>

@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 90%;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+/* Media queries para dispositivos móviles */
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 100%; /* Cambiamos el ancho al 100% para ocupar todo el ancho disponible en dispositivos móviles */
+        border-radius: 0; /* Quitamos el borde redondeado en dispositivos móviles */
+        box-shadow: none; /* Quitamos la sombra en dispositivos móviles */
+    }
+
+    input[type="number"],
+    input[type="submit"] {
+        width: 100%; /* Ajustamos el ancho de los inputs y botones al 100% en dispositivos móviles */
+    }
+}
